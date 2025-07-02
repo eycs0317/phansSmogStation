@@ -17,7 +17,6 @@ import Quote from '@/ui/atoms/atomContent/quote';
 import Small from '@/ui/atoms/atomContent/small';
 import Strong from '@/ui/atoms/atomContent/strong';
 
-
 export default function AtomContent({node}: {node: Node}): JSX.Element | null {
   switch (node.type) {
     case 'content': {
