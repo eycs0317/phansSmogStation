@@ -7,9 +7,12 @@ import type {Metadata} from 'next';
 // lib
 import {getSession} from '@/lib/session';
 
+// ui
+import Header from '@/ui/molecules/header';
+
 export async function generateMetadata(): Promise<Metadata> {
   const session = await getSession();
-  const lang = session.lang || 'zh-HK';
+  const lang = session?.lang ?? 'en-US';
 
   const localizedTitles: Record<string, string> = {
     'en-US': 'edlou.com',
@@ -46,6 +49,7 @@ export default async function RootLayout({children,}: Readonly<{children: React.
   return (
     <html lang={lang}>
       <body>
+        <Header />
         {children}
       </body>
     </html>

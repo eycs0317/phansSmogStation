@@ -3,8 +3,10 @@ import type {JSX} from 'react';
 
 type HeadingProps = {
   level: 1 | 2 | 3 | 4 | 5 | 6;
-  content: string;
+  id?: string | null;
   className?: string | null;
+  children?: React.ReactNode;
+  dangerouslySetInnerHTML?: { __html: string };
 };
 
 const defaultClasses: Record<HeadingProps['level'], string> = {
@@ -16,9 +18,23 @@ const defaultClasses: Record<HeadingProps['level'], string> = {
   6: 'text-xl',
 };
 
-export default function Heading({level, content, className = null}: HeadingProps) {
+export default function Heading({
+  level,
+  id = null,
+  className = null,
+  children,
+  dangerouslySetInnerHTML,
+}: HeadingProps) {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
   const classes = className ?? defaultClasses[level];
 
-  return <Tag className={classes}>{content}</Tag>;
+  return (
+    <Tag
+      id={id ?? undefined}
+      className={classes}
+      {...(dangerouslySetInnerHTML
+        ? {dangerouslySetInnerHTML}
+        : {children})}
+    />
+  );
 }

@@ -1,0 +1,12 @@
+.hero {display:flex; padding:3rem;}
+.hero .container {display:flex; flex-direction:column; gap:calc(var(--spacing) * 4);}
+.hero .container .content {flex-basis: calc(1/2 * 100%); text-align:center; align-content:center;}
+@media (width >= 48rem) {
+  .hero .container {flex-direction:row;}
+  .hero .container .content {text-align:left;}
+}
+.hero .container .content > img {margin:auto; padding:0 3rem; width:80%;}
+.hero .container .content h1 {color:#fff;}
+.hero .container .content h1 strong {color:#ccc;}
+.hero .container .content p {color:#fff;}
+.hero .container .content p strong {color:#f60;}
