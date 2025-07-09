@@ -1,3 +1,6 @@
+// react
+import React, {type ReactNode} from 'react';
+
 // styles
 import '@/app/globals.css';
 
@@ -42,14 +45,29 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
+interface LayoutProps {
+  children: ReactNode;
+}
+
+export default async function RootLayout({
+  children,
+}: LayoutProps) {
   const session = await getSession();
   const lang = session?.lang ?? 'en-US';
 
   return (
     <html lang={lang}>
       <body>
-        <Header />
+        <Header
+          logo={{
+            src: '/assets/i/logo.svg',
+            width: 200,
+            height: 40
+          }}
+          home={{
+            href: '/'
+          }}
+        />
         {children}
       </body>
     </html>

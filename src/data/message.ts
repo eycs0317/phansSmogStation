@@ -4,5 +4,9 @@ export function getContent(): Record<string, Record<string, string>> {
       'en-US': 'This is Error',
       'zh-HK': 'Error Message',
     },
+    'e0002': {
+      'en-US': 'Hello',
+      'zh-HK': 'Error Message',
+    },
   };
 }

@@ -1,137 +1,54 @@
 // nextjs
-// import Link from 'next/link';
-
-// lib
-// import {getSession} from '@/lib/session';
+import Image from 'next/image';
+import Link from 'next/link';
 
 // ui
-import type {Node} from '@/ui/types/nodeTypes';
-// import Heading from '@/ui/atoms/heading';
+import Heading from '@/ui/atoms/heading';
+
+// ui - molecules
 import Hero from '@/ui/molecules/hero';
-// import Message from '@/ui/molecules/message';
-// import Navigation from '@/ui/molecules/navigation';
+import Navigation from '@/ui/molecules/navigation';
+import Message from '@/ui/molecules/message';
+
+// lib
+import {getSite} from '@/lib/getSite';
 
 // utils
-// import {l10n} from '@/lib/l10n';
+import {l10n} from '@/lib/l10n';
 
-// interface PageProps {
-//   searchParams: Promise<{message?: string}>;
-// }
+// type
+export type PageProps = {
+  searchParams?: Promise<Record<string, string | string[]>>;
+};
 
-export default async function MainPage() {
-// export default async function MainPage({searchParams}: PageProps) {
-//   const session = await getSession();
-//   const lang = session?.lang ?? 'en-US';
+export default async function MainPage({
+  searchParams
+}: PageProps) {
+  const params = searchParams ? await searchParams : undefined;
+  const site = await getSite(params);
 
-//   const paramsGET = await searchParams;
-//   const message = paramsGET?.message;
-
-const hero: Node[][] = [
-  [
-    {
-      type: 'image',
-      data: {
-        src: '/assets/i/profile.svg',
-        width: 100,
-        height: 100,
-        alt: 'Eddie T. Lou',
-      },
-    },
-  ],
-  [
-    {
-      type: 'heading',
-      data: {
-        level: 1,
-        children: [
-          {
-            type: 'strong',
-            data: {
-              children: [
-                {
-                  type: 'content',
-                  data: {
-                    children: 'Eddie',
-                  },
-                },
-              ],
-            },
-          },
-          {
-            type: 'content',
-            data: {
-              children: ' Lou',
-            },
-          },
-        ],
-      },
-    },
-    {
-      type: 'paragraph',
-      data: {
-        children: [
-          { type: 'content', data: { children: 'I ' } },
-          {
-            type: 'strong',
-            data: {
-              children: [
-                { type: 'content', data: { children: 'code' } },
-              ],
-            },
-          },
-          { type: 'content', data: { children: ' web.' } },
-          { type: 'break', data: {} },
-          { type: 'content', data: { children: 'I ' } },
-          {
-            type: 'strong',
-            data: {
-              children: [
-                { type: 'content', data: { children: 'design' } },
-              ],
-            },
-          },
-          { type: 'content', data: { children: ' web.' } },
-          { type: 'break', data: {} },
-          { type: 'content', data: { children: 'Most importantly, I ' } },
-          {
-            type: 'strong',
-            data: {
-              children: [
-                { type: 'content', data: { children: 'understand' } },
-              ],
-            },
-          },
-          { type: 'content', data: { children: ' web.' } },
-        ],
-      },
-    },
-    {
-      type: 'link',
-      data: {
-        href: '/resume',
-        className: 'button',
-        children: [
-          {
-            type: 'content',
-            data: {
-              children: 'Resume',
-            },
-          },
-        ],
-      },
-    },
-  ],
-];
   return (
     <>
-      <Hero content={hero} />
-{/*      <main role="main">
-        <Message messageCode={message ?? ''} />
-        <Heading level={1}>{l10n('layout', 'title', lang)}</Heading>
-        <Heading level={2}>{l10n('message', 'e0001', lang)}</Heading>
+      <Hero
+        primary={
+          <Image src="/assets/i/profile.svg" width="100" height="100" alt={l10n('layout-title', site.lang)} />
+        }
+        secondary={
+          <>
+            <Heading level={1}><strong>Eddie</strong> Lou</Heading>
+            <p>I <strong>code</strong> web.<br />I <strong>design</strong> web.<br />Most importantly, I <strong>understand</strong> web.</p>
+          </>
+        }
+      />
+      {/*<FormInput fieldData={form} />*/}
+
+      <main role="main">
+        <Message messageCode={site.messageCode ?? ''} />
+{/*        <Heading level={1}>{l10n('layout', 'title', lang)}</Heading>
+        <Heading level={2}>{l10n('message', 'e0001', lang)}</Heading>*/}
         <div className="flex flex-row">
           <div className="w-50">
-            <Navigation type="flyout">
+            <Navigation type="flyout" display="horizontal">
               <ul>
                 <li><Link href="/item1">Link Item 1</Link></li>
                 <li><Link href="/item2">Link Item 2</Link>
@@ -152,7 +69,7 @@ const hero: Node[][] = [
           </div>
           <div>Main Content</div>
         </div>
-      </main>*/}
+      </main>
     </>
   );
 }

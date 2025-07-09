@@ -1,11 +1,13 @@
 // styles
-import '@/ui/molecules/navigation/navigation.css';
+import '@/ui/molecules/navigation/styles.css';
 
+// type
 type NavigationProps = {
-  display?: string | null;
-  type?: string | null;
-  align?: string | null;
+  display?: 'horizontal' | null;
+  type?: 'full' | 'flyout' | null;
+  align?: 'right' | null;
   children?: React.ReactNode;
+  id?: string;
 };
 
 export default function Navigation({
@@ -13,11 +15,12 @@ export default function Navigation({
   type = null,
   align = null,
   children,
+  id,
 }: NavigationProps) {
-  const classNames = ['nav'];
-  if (display) classNames.push(display);
-  if (type) classNames.push(type);
-  if (align) classNames.push(align);
+  const classes = ['nav'];
+  if (display) classes.push(display);
+  if (type) classes.push(type);
+  if (align) classes.push(align);
 
-  return <nav className={classNames.join(' ')}>{children}</nav>;
+  return <nav className={classes.join(' ')} id={id}>{children}</nav>;
 }

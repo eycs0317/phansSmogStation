@@ -234,8 +234,6 @@ a:active {color:var(--color-link-light-active); text-decoration:underline;}
 
 /* Pattern */
 
-.headerPage {background-color:#036; height:3rem; display:flex; flex-direction:row; align-content:center; justify-content:center; column-gap:3rem; padding:.625rem 1rem}
-
 
 .button:link { background-color:var(--color-button-bg); border-color:var(--color-button-border); color:var(--color-button-text); text-decoration:none; }
 .button:visited { background-color:var(--color-button-bg); border-color:var(--color-button-border); color:var(--color-button-text); text-decoration:none; }

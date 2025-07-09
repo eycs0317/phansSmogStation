@@ -1,20 +1,36 @@
 // data
-import {getContent as getLayoutContent} from '@/data/layout';
-import {getContent as getMessageContent} from '@/data/message';
+import {getContent as layoutContent} from '@/data/layout';
+import {getContent as messageContent} from '@/data/message';
 
-export function l10n(contentGroup: string, contentKey: string, lang: string): string {
-  let content: Record<string, Record<string, string>> = {};
+export function l10n(
+  contentCode: string,
+  lang: string = 'en-US',
+): string {
+  if (!contentCode.includes('-')) {
+    throw new Error(`Invalid contentCode: ${contentCode}`);
+  }
+  const [groupKey, ...rest] = contentCode.split('-');
+  if (!groupKey || rest.length === 0) {
+    throw new Error(`Invalid contentCode: ${contentCode}`);
+  }
+  const contentKey = rest.join('-').toLowerCase();
 
-  switch (contentGroup) {
+  let content: Record<string, Record<string, string>>;
+
+  switch (groupKey) {
     case 'layout':
-      content = getLayoutContent();
+      content = layoutContent();
       break;
     case 'message':
-      content = getMessageContent();
+      content = messageContent();
       break;
     default:
-      return `[${contentKey}]`;
+      throw new Error(`Unsupported content group: ${groupKey}`);
   }
 
-  return content[contentKey]?.[lang] ?? `[${contentKey}]`;
+  return (
+    content?.[contentKey]?.[lang] ??
+    content?.[contentKey]?.['en-US'] ??
+    `[${contentKey.toUpperCase()}]`
+  );
 }

@@ -1,27 +1,31 @@
+// react
+import type {ReactNode} from 'react';
+
 // styles
-import '@/ui/molecules/hero/hero.css';
+import '@/ui/molecules/hero/styles.css';
 
-// ui - types
-import type {Node} from '@/ui/types/nodeTypes';
-
-// ui - atom
-import Atom from '@/ui/atoms/atom';
-
-type HeroProps = {
-  content: Node[][];
+// type
+export type HeroProps = {
+  primary: ReactNode;
+  secondary: ReactNode;
+  className?: string | null;
+  id?: string;
 };
 
-export default function Hero({ content }: HeroProps) {
+export default function Hero({
+  primary,
+  secondary,
+  className,
+  id,
+}: HeroProps) {
+  const classes = ['hero'];
+  if (className) classes.push(className);
+
   return (
-    <section className="hero">
+    <section className={classes.join(' ')} id={id}>
       <div className="container">
-        {content.map((group, groupIndex) => (
-          <div className="content" key={groupIndex}>
-            {group.map((block, blockIndex) => (
-              <Atom key={blockIndex} node={block} />
-            ))}
-          </div>
-        ))}
+        <div>{primary}</div>
+        <div>{secondary}</div>
       </div>
     </section>
   );

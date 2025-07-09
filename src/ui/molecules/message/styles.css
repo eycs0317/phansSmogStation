@@ -1,0 +1,3 @@
+.message {background-color: #00f; border:1px solid #00f; padding:.5rem 1rem;}
+.message.success {background-color:#0f0;;border-color:#0f0;}
+.message.error {background-color:#f00;;border-color:#f00;}

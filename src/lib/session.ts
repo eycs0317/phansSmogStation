@@ -9,7 +9,7 @@ export interface SessionData {
 
 export const sessionOptions: SessionOptions = {
   password: process.env.SECRET_COOKIE_PASSWORD as string,
-  cookieName: 'myapp_session',
+  cookieName: 'efx_session',
   cookieOptions: {
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'lax',
