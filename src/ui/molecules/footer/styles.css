@@ -1,0 +1,7 @@
+.footerPage {background-color:var(--color-footer-global-bg); color:var(--color-footer-global-text);}
+.footerPage .wrapper {display:grid; grid-auto-flow:dense; width:100%; grid-template-columns:repeat(12, minmax(0, 1fr)); padding:var(--padding-footer-global-bg-y) var(--padding-footer-global-bg-x);}
+.footerPage .wrapper > small {grid-column:span 12 / span 12;}
+
+@media (width >= 48rem) {
+  .footerPage .wrapper {max-width:var(--container-5xl); margin:auto;}
+}

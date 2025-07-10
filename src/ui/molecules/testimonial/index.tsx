@@ -6,7 +6,7 @@ export type TestimonialProps = {
   quote: string;
   author: string;
   role?: string;
-  className?: string | null;
+  className?: string;
   id?: string;
 };
 

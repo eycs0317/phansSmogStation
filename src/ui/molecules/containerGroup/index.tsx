@@ -7,7 +7,7 @@ import '@/ui/molecules/containerGroup/styles.css';
 // type
 export type ContainerGroupProps = {
   children: ReactNode;
-  className?: string | null;
+  className?: string;
   id?: string;
 };
 

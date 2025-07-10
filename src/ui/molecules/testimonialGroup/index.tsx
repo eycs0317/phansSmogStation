@@ -7,7 +7,7 @@ import '@/ui/molecules/testimonialGroup/styles.css';
 // type
 export type TestimonialGroupProps = {
   children: ReactNode;
-  className?: string | null;
+  className?: string;
   id?: string;
 };
 

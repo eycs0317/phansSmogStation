@@ -7,7 +7,7 @@ import '@/ui/molecules/container/styles.css';
 // type
 export type ContainerProps = {
   children: ReactNode;
-  className?: string | null;
+  className?: string;
   id?: string;
 };
 

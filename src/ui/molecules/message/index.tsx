@@ -2,7 +2,7 @@
 import '@/ui/molecules/message/styles.css';
 
 // lib
-import {getSession} from '@/lib/session';
+import {getSite} from '@/lib/getSite';
 
 // utils
 import {l10n} from '@/lib/l10n';
@@ -10,7 +10,7 @@ import {l10n} from '@/lib/l10n';
 // type
 export type MessageProps = {
   messageCode: string;
-  className?: string | null;
+  className?: string;
   id?: string;
 };
 
@@ -23,8 +23,7 @@ export default async function Message({
     return null;
   }
 
-  const session = await getSession();
-  const lang = session?.lang ?? 'en-US';
+  const {lang} = await getSite();
 
   const messageTypeMap: Record<string, string> = {
     e: 'error',

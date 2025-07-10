@@ -1,1 +1,1 @@
-.container {padding:1rem; max-width:100%; grid-column:span 12 / span 12;}
+.container {padding:var(--padding-container-xy); max-width:100%; grid-column:span 12 / span 12;}

@@ -8,7 +8,7 @@ import '@/ui/molecules/hero/styles.css';
 export type HeroProps = {
   primary: ReactNode;
   secondary: ReactNode;
-  className?: string | null;
+  className?: string;
   id?: string;
 };
 

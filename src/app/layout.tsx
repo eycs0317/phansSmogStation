@@ -14,6 +14,7 @@ import {l10n} from '@/lib/l10n';
 
 // ui
 import Header from '@/ui/molecules/header';
+import Footer from '@/ui/molecules/footer';
 
 export async function generateMetadata(): Promise<Metadata> {
   const session = await getSession();
@@ -69,6 +70,13 @@ export default async function RootLayout({
           }}
         />
         {children}
+        <Footer
+          year="2025"
+          entity={{
+            url: '/',
+            name: 'edlou.com'
+          }}
+        />
         
         <Script 
           id="set-page-id"
