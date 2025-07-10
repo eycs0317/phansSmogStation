@@ -6,6 +6,7 @@ import '@/app/globals.css';
 
 // nextjs
 import type {Metadata} from 'next';
+import Script from 'next/script';
 
 // lib
 import {getSession} from '@/lib/session';
@@ -62,13 +63,38 @@ export default async function RootLayout({
           logo={{
             src: '/assets/i/logo.svg',
             width: 200,
-            height: 40
-          }}
-          home={{
-            href: '/'
+            height: 40,
           }}
         />
         {children}
+        
+        <Script 
+          id="set-page-id"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const pathname = window.location.pathname;
+                  const pageId = pathname === '/' ? 'home' : 
+                    pathname.slice(1).split('/')
+                      .map((part, i) => i === 0 ? part : part[0].toUpperCase() + part.slice(1))
+                      .join('');
+                  
+                  document.body.id = pageId;
+                  
+                  const logoLink = document.querySelector('[data-logo-link]');
+                  if (logoLink) {
+                    // Toggle class based on home status
+                    logoLink.classList.toggle('notLink', pageId === 'home');
+                  }
+                } catch (e) {
+                  console.error('Error setting page ID:', e);
+                }
+              })();
+            `
+          }}
+        />
       </body>
     </html>
   );

@@ -1,9 +1,12 @@
+'use client';
+
 // styles
 import '@/ui/molecules/header/styles.css';
 
 // nextjs
 import Image from 'next/image';
 import Link from 'next/link';
+import {usePathname} from 'next/navigation';
 
 // type
 type LogoProps = {
@@ -12,25 +15,22 @@ type LogoProps = {
   height: number;
 };
 
-type HomeProps = {
-  href: string;
-};
-
 export type HeaderProps = {
   logo: LogoProps;
-  home?: HomeProps;
   className?: string | null;
   id?: string;
 };
 
 export default function Header({
   logo,
-  home,
   className,
   id,
 }: HeaderProps) {
   const classes = ['headerPage'];
   if (className) classes.push(className);
+
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   const logoImage = (
     <Image
@@ -43,11 +43,13 @@ export default function Header({
 
   return (
     <header role="banner" className={classes.join(' ')} id={id}>
-      {home ? (
-        <Link href={home.href}>{logoImage}</Link>
-      ) : (
-        logoImage
-      )}
+      <Link 
+        href="/"
+        className={isHomePage ? 'logoLink notLink' : 'logoLink'}
+        data-logo-link="true"
+      >
+        {logoImage}
+      </Link>
     </header>
   );
 }
