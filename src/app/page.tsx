@@ -31,7 +31,7 @@ export default async function MainPage({
     <>
       <Hero
         primary={
-          <Image src="/assets/i/profile.svg" width="100" height="100" alt={l10n('layout-title', site.lang)} />
+          <Image src="/assets/i/profile.svg" width="100" height="100" alt={l10n('layout-hero-avatar', site.lang)} />
         }
         secondary={
           <>

@@ -10,6 +10,7 @@ import Script from 'next/script';
 
 // lib
 import {getSession} from '@/lib/session';
+import {l10n} from '@/lib/l10n';
 
 // ui
 import Header from '@/ui/molecules/header';
@@ -62,6 +63,7 @@ export default async function RootLayout({
         <Header
           logo={{
             src: '/assets/i/logo.svg',
+            alt: l10n('layout-logo-link', lang),
             width: 200,
             height: 40,
           }}

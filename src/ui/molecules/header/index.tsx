@@ -11,6 +11,7 @@ import {usePathname} from 'next/navigation';
 // type
 type LogoProps = {
   src: string;
+  alt: string;
   width: number;
   height: number;
 };
@@ -35,7 +36,7 @@ export default function Header({
   const logoImage = (
     <Image
       src={logo.src}
-      alt="Home"
+      alt={logo.alt}
       width={logo.width}
       height={logo.height}
     />

@@ -12,8 +12,6 @@ import Message from '@/ui/molecules/message';
 
 // lib
 import {getSite} from '@/lib/getSite';
-
-// utils
 import {l10n} from '@/lib/l10n';
 
 // type
@@ -22,19 +20,16 @@ export type PageProps = {
 };
 
 // metadata
-export async function generateMetadata({
-  searchParams
-}: PageProps) {
-  const params = searchParams ? await searchParams : undefined;
-  const site = await getSite(params);
+export async function generateMetadata() {
+  const {lang} = await getSite();
 
   const localizedTitles: Record<string, string> = {
-    'en-US': 'About',
-    'zh-HK': '預約 [選擇日期]',
+    'en-US': 'About me',
+    'zh-HK': '關於',
   };
 
   return {
-    title: localizedTitles[site.lang] ?? '',
+    title: localizedTitles[lang] ?? '',
   };
 }
 
@@ -48,7 +43,7 @@ export default async function MainPage({
     <>
       <Hero
         primary={
-          <Image src="/assets/i/profile.svg" width="100" height="100" alt={l10n('layout-title', site.lang)} />
+          <Image src="/assets/i/profile.svg" width="100" height="100" alt={l10n('layout-hero-avatar', site.lang)} />
         }
         secondary={
           <>
