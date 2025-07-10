@@ -183,44 +183,9 @@
 
 }
 
-body .hero {
-  background:
-    linear-gradient(
-      27deg,
-      var(--color-hero-500) calc(var(--spacing) * 1.25),
-      var(--color-transparent) calc(var(--spacing) * 1.25)
-    ) 0 calc(var(--spacing) * 1.25),
-    linear-gradient(
-      207deg,
-      var(--color-hero-500) calc(var(--spacing) * 1.25),
-      var(--color-transparent) calc(var(--spacing) * 1.25)
-    ) calc(var(--spacing) * 2.5) 0px,
-    linear-gradient(
-      27deg,
-      var(--color-hero-100) calc(var(--spacing) * 1.25),
-      var(--color-transparent) calc(var(--spacing) * 1.25)
-    ) 0px calc(var(--spacing) * 2.5),
-    linear-gradient(
-      207deg,
-      var(--color-hero-100) calc(var(--spacing) * 1.25),
-      var(--color-transparent) calc(var(--spacing) * 1.25)
-    ) calc(var(--spacing) * 2.5) calc(var(--spacing) * 1.25),
-    linear-gradient(
-      90deg,
-      var(--color-hero-300) calc(var(--spacing) * 2.5),
-      var(--color-transparent) calc(var(--spacing) * 2.5)
-    ),
-    linear-gradient(
-      var(--color-hero-200) 25%, 
-      var(--color-hero-400) 25%, 
-      var(--color-hero-400) 50%, 
-      var(--color-transparent) 50%, 
-      var(--color-transparent) 75%, 
-      var(--color-hero-000) 75%, 
-      var(--color-hero-000)
-    );
-  background-color:var(--color-hero-600);
-  background-size:calc(var(--spacing) * 5) calc(var(--spacing) * 5);
+body main {display:flex; flex-direction:column; justify-content:center; width:100%; margin:auto;}
+@media (width >= 64rem) {
+  body main {width:var(--container-5xl);}
 }
 
 /* Foundation */

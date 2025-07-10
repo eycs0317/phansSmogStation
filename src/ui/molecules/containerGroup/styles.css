@@ -1,0 +1,25 @@
+.containerGroup {display:grid; grid-auto-flow:dense; width:100%; grid-template-columns:repeat(12, minmax(0, 1fr));}
+
+@media (width >= 48rem) {
+  .containerGroup.dual > .container {grid-column:span 6 / span 6;}
+  .containerGroup.tri > .container {grid-column:span 4 / span 4;}
+  .containerGroup.quad > .container {grid-column:span 6 / span 6;}
+  .containerGroup.hex > .container {grid-column:span 4 / span 4;}
+  .containerGroup.river > .container {grid-column:span 6;}
+  .containerGroup.river > .container:nth-child(4n-1) {grid-column:7 / span 6;}
+  .containerGroup.river > .container:nth-child(4n) {grid-column:1 / span 6;}
+  .containerGroup.river.third > .container:nth-child(4n-3) {grid-column:span 4;}
+  .containerGroup.river.third > .container:nth-child(4n-2) {grid-column:span 8;}
+  .containerGroup.river.third > .container:nth-child(4n-1) {grid-column:9 / span 4;}
+  .containerGroup.river.third > .container:nth-child(4n) {grid-column:1 / span 8;}
+  .containerGroup.river.forth > .container:nth-child(4n-3) {grid-column:span 3;}
+  .containerGroup.river.forth > .container:nth-child(4n-2) {grid-column:span 9;}
+  .containerGroup.river.forth > .container:nth-child(4n-1) {grid-column:10 / span 3;}
+  .containerGroup.river.forth > .container:nth-child(4n) {grid-column:1 / span 9;}
+}
+@media (width >= 64rem) {
+  .containerGroup.dual > .container {grid-column:span 6 / span 6;}
+  .containerGroup.tri > .container {grid-column:span 4 / span 4;}
+  .containerGroup.quad > .container {grid-column:span 3 / span 3;}
+  .containerGroup.hex > .container {grid-column:span 2 / span 2;}
+}

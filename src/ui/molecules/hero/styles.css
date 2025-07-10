@@ -1,12 +1,52 @@
-.hero {display:flex; padding:3rem;}
-.hero .container {display:flex; flex-direction:column; gap:calc(var(--spacing) * 4);}
-.hero .container > div {flex-basis: calc(1/2 * 100%); text-align:center; align-content:center;}
-@media (width >= 48rem) {
-  .hero .container {flex-direction:row;}
-  .hero .container > div {text-align:left;}
+.hero {
+  background:
+    linear-gradient(
+      27deg,
+      var(--color-hero-500) calc(var(--spacing) * 1.25),
+      var(--color-transparent) calc(var(--spacing) * 1.25)
+    ) 0 calc(var(--spacing) * 1.25),
+    linear-gradient(
+      207deg,
+      var(--color-hero-500) calc(var(--spacing) * 1.25),
+      var(--color-transparent) calc(var(--spacing) * 1.25)
+    ) calc(var(--spacing) * 2.5) 0px,
+    linear-gradient(
+      27deg,
+      var(--color-hero-100) calc(var(--spacing) * 1.25),
+      var(--color-transparent) calc(var(--spacing) * 1.25)
+    ) 0px calc(var(--spacing) * 2.5),
+    linear-gradient(
+      207deg,
+      var(--color-hero-100) calc(var(--spacing) * 1.25),
+      var(--color-transparent) calc(var(--spacing) * 1.25)
+    ) calc(var(--spacing) * 2.5) calc(var(--spacing) * 1.25),
+    linear-gradient(
+      90deg,
+      var(--color-hero-300) calc(var(--spacing) * 2.5),
+      var(--color-transparent) calc(var(--spacing) * 2.5)
+    ),
+    linear-gradient(
+      var(--color-hero-200) 25%, 
+      var(--color-hero-400) 25%, 
+      var(--color-hero-400) 50%, 
+      var(--color-transparent) 50%, 
+      var(--color-transparent) 75%, 
+      var(--color-hero-000) 75%, 
+      var(--color-hero-000)
+    );
+  background-color:var(--color-hero-600);
+  background-size:calc(var(--spacing) * 5) calc(var(--spacing) * 5);
 }
-.hero .container > div > img {margin:auto; padding:0 3rem; width:80%;}
-.hero .container > div h1 {color:#fff;}
-.hero .container > div h1 strong {color:#ccc;}
-.hero .container > div p {color:#fff;}
-.hero .container > div p strong {color:#f60;}
+
+.hero {display:flex; padding:3rem;}
+.hero > .container {display:flex; flex-direction:column; gap:calc(var(--spacing) * 4);}
+.hero > .container > div {flex-basis: calc(1/2 * 100%); text-align:center; align-content:center;}
+@media (width >= 48rem) {
+  .hero > .container {flex-direction:row;}
+  .hero > .container > div {text-align:left;}
+}
+.hero > .container > div > img {margin:auto; padding:0 3rem; width:80%;}
+.hero > .container > div h1 {color:#fff;}
+.hero > .container > div h1 strong {color:#ccc;}
+.hero > .container > div p {color:#fff;}
+.hero > .container > div p strong {color:#f60;}
