@@ -84,23 +84,48 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                try {
-                  const pathname = window.location.pathname;
-                  const pageId = pathname === '/' ? 'home' : 
-                    pathname.slice(1).split('/')
-                      .map((part, i) => i === 0 ? part : part[0].toUpperCase() + part.slice(1))
-                      .join('');
-                  
-                  document.body.id = pageId;
-                  
-                  const logoLink = document.querySelector('[data-logo-link]');
-                  if (logoLink) {
-                    // Toggle class based on home status
-                    logoLink.classList.toggle('notLink', pageId === 'home');
+                function updatePageId() {
+                  try {
+                    const pathname = window.location.pathname;
+                    const pageId =
+                      'page' +
+                      (pathname === '/'
+                        ? 'Home'
+                        : pathname
+                            .slice(1)
+                            .split('/')
+                            .map(part => part[0].toUpperCase() + part.slice(1))
+                            .join(''));
+                    
+                    document.body.id = pageId;
+                    
+                    const logoLink = document.querySelector('[data-logo-link]');
+                    if (logoLink) {
+                      logoLink.classList.toggle('notLink', pageId === 'pageHome');
+                    }
+                  } catch (e) {
+                    console.error('Error setting page ID:', e);
                   }
-                } catch (e) {
-                  console.error('Error setting page ID:', e);
                 }
+
+                // Initial update on load
+                updatePageId();
+
+                // Listen for history changes (pushState / replaceState)
+                const pushState = history.pushState;
+                history.pushState = function() {
+                  pushState.apply(this, arguments);
+                  updatePageId();
+                };
+
+                const replaceState = history.replaceState;
+                history.replaceState = function() {
+                  replaceState.apply(this, arguments);
+                  updatePageId();
+                };
+
+                // Listen for back/forward navigation
+                window.addEventListener('popstate', updatePageId);
               })();
             `
           }}

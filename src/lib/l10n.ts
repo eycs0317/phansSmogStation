@@ -1,6 +1,7 @@
 // data
 import {getContent as layoutContent} from '@/data/layout';
 import {getContent as messageContent} from '@/data/message';
+import {getContent as homeContent} from '@/data/home';
 
 export function l10n(
   contentCode: string,
@@ -23,6 +24,9 @@ export function l10n(
       break;
     case 'message':
       content = messageContent();
+      break;
+    case 'home':
+      content = homeContent();
       break;
     default:
       throw new Error(`Unsupported content group: ${groupKey}`);

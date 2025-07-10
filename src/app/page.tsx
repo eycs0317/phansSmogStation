@@ -64,52 +64,11 @@ export default async function MainPage({
         </TestimonialGroup>
         <ContainerGroup className="river forth">
           <Container>
-            <Heading level={2}>Photo 1</Heading>
-            <p>These are my latest photos</p>
+            <Image src="/assets/i/design_engineering_handbook.png" width="264" height="403" alt={l10n('home-book', site.lang)} />
           </Container>
           <Container>
-            <Heading level={2}>Photo 2</Heading>
-            <p>These are my latest photos</p>
-          </Container>
-          <Container>
-            <Heading level={2}>Photo 3</Heading>
-            <p>These are my latest photos</p>
-          </Container>
-          <Container>
-            <Heading level={2}>Photo 4</Heading>
-            <p>These are my latest photos</p>
-          </Container>
-          <Container>
-            <Heading level={2}>Photo 5</Heading>
-            <p>These are my latest photos</p>
-          </Container>
-          <Container>
-            <Heading level={2}>Photo 6</Heading>
-            <p>These are my latest photos</p>
-          </Container>
-          <Container>
-            <Heading level={2}>Photo 7</Heading>
-            <p>These are my latest photos</p>
-          </Container>
-          <Container>
-            <Heading level={2}>Photo 8</Heading>
-            <p>These are my latest photos</p>
-          </Container>
-          <Container>
-            <Heading level={2}>Photo 9</Heading>
-            <p>These are my latest photos</p>
-          </Container>
-          <Container>
-            <Heading level={2}>Photo 10</Heading>
-            <p>These are my latest photos</p>
-          </Container>
-          <Container>
-            <Heading level={2}>Photo 11</Heading>
-            <p>These are my latest photos</p>
-          </Container>
-          <Container>
-            <Heading level={2}>Photo 12</Heading>
-            <p>These are my latest photos</p>
+            <Heading level={2}><strong>Design Engineering</strong> Handbook</Heading>
+            <p>Learn how design engineering, an essential discipline to creating great products, brings together form and function while accelerating innovation. Written by industry leaders from Indeed, Mailchimp, The New York Times, and Minted, this book will help you connect design and engineering and work more efficiently as a team. Available in epub, PDF, and audiobook formats.</p>
           </Container>
         </ContainerGroup>
       </main>
