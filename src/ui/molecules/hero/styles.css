@@ -38,15 +38,14 @@
   background-size:calc(var(--spacing) * 5) calc(var(--spacing) * 5);
 }
 
-.hero {display:flex; padding:3rem;}
-.hero > .container {display:flex; flex-direction:column; gap:calc(var(--spacing) * 4);}
-.hero > .container > div {flex-basis: calc(1/2 * 100%); text-align:center; align-content:center;}
+.hero > .wrapper {display:grid; grid-auto-flow:dense; width:100%; grid-template-columns:repeat(12, minmax(0, 1fr)); padding:3rem 1rem;}
+.hero > .wrapper > div {grid-column:span 12 / span 12; text-align:center; align-content:center;}
+.hero > .wrapper > div > img {margin:auto; padding:0 3rem; width:70%;}
+.hero > .wrapper > div h1 {color:#fff;}
+.hero > .wrapper > div h1 strong {color:#ccc;}
+.hero > .wrapper > div p {color:#fff;}
+.hero > .wrapper > div p strong {color:#f60;}
 @media (width >= 48rem) {
-  .hero > .container {flex-direction:row;}
-  .hero > .container > div {text-align:left;}
+  .hero > .wrapper {max-width:var(--container-5xl); margin:auto;}
+  .hero > .wrapper > div {grid-column:span 6 / span 6;}
 }
-.hero > .container > div > img {margin:auto; padding:0 3rem; width:80%;}
-.hero > .container > div h1 {color:#fff;}
-.hero > .container > div h1 strong {color:#ccc;}
-.hero > .container > div p {color:#fff;}
-.hero > .container > div p strong {color:#f60;}

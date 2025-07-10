@@ -9,6 +9,8 @@ import Hero from '@/ui/molecules/hero';
 import Message from '@/ui/molecules/message';
 import ContainerGroup from '@/ui/molecules/containerGroup';
 import Container from '@/ui/molecules/container';
+import TestimonialGroup from '@/ui/molecules/testimonialGroup';
+import Testimonial from '@/ui/molecules/testimonial';
 
 // lib
 import {getSite} from '@/lib/getSite';
@@ -48,6 +50,18 @@ export default async function MainPage({
             <p>Author of <strong>Design Engineering Handbook</strong> published by Design Better, InVision.</p>
           </Container>
         </ContainerGroup>
+        <TestimonialGroup>
+          <Testimonial
+            quote="When I managed the centralized Job Seeker Design Technology and Design Engineering team, Eddie offered me valuable guidance and helped me maintain high standards for my team."
+            author="Susan Le"
+            role="Senior UX Director"
+          />
+          <Testimonial
+            quote="When I managed the centralized Job Seeker Design Technology and Design Engineering team, Eddie offered me valuable guidance and helped me maintain high standards for my team."
+            author="Susan Le"
+            role="Senior UX Director"
+          />
+        </TestimonialGroup>
         <ContainerGroup className="river forth">
           <Container>
             <Heading level={2}>Photo 1</Heading>

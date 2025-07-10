@@ -23,7 +23,7 @@ export default function Hero({
 
   return (
     <section className={classes.join(' ')} id={id}>
-      <div className="container">
+      <div className="wrapper">
         <div>{primary}</div>
         <div>{secondary}</div>
       </div>

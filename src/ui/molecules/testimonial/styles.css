@@ -1,0 +1,4 @@
+.testimonial {padding:1rem;}
+.testimonial blockquote {border-left:1px solid #ccc; margin-left:1rem; padding:1rem;}
+.testimonial p {font-weight:bold; margin:1rem 0 0 1rem;}
+.testimonial p em {font-weight:normal; font-style:italic;}
