@@ -33,12 +33,12 @@ export default async function MainPage({
     <>
       <Hero
         primary={
-          <Image src="/assets/i/profile.svg" width="100" height="100" alt={l10n('layout-hero-avatar', site.lang)} />
+          <Image src="/assets/i/profile.svg" width="100" height="100" alt={l10n('home-hero-avatar', site.lang)} />
         }
         secondary={
           <>
-            <Heading level={1}><strong>Eddie</strong> Lou</Heading>
-            <p>I <strong>code</strong> web.<br />I <strong>design</strong> web.<br />Most importantly, I <strong>understand</strong> web.</p>
+            <Heading level={1}><strong>{l10n('home-hero-heading-1a', site.lang)}</strong> {l10n('home-hero-heading-1b', site.lang)}</Heading>
+            <p>{l10n('home-hero-content-1a', site.lang)}<strong>{l10n('home-hero-content-1b', site.lang)}</strong>{l10n('home-hero-content-1c', site.lang)}<br />{l10n('home-hero-content-2a', site.lang)}<strong>{l10n('home-hero-content-2b', site.lang)}</strong>{l10n('home-hero-content-2c', site.lang)}<br />{l10n('home-hero-content-3a', site.lang)}<strong>{l10n('home-hero-content-3b', site.lang)}</strong>{l10n('home-hero-content-3c', site.lang)}</p>
           </>
         }
       />
@@ -46,8 +46,8 @@ export default async function MainPage({
         <Message messageCode={site.messageCode ?? ''} />
         <ContainerGroup id="intro">
           <Container>
-            <p>Seasoned UX and Engineering Leader with a proven track record of leading, scaling, and maturing design and engineering organization to deliver world-class user experiences, exemplify engineering excellence and align with company goals. Expert in developing and implementing <strong>design systems</strong>, fostering <strong>cross-functional collaboration</strong>, and defining <strong>UX strategy</strong>.</p>
-            <p>Author of <strong>Design Engineering Handbook</strong> published by Design Better, InVision.</p>
+            <p>{l10n('home-intro-content-1a', site.lang)}<strong>{l10n('home-intro-content-1b', site.lang)}</strong>{l10n('home-intro-content-1c', site.lang)}<strong>{l10n('home-intro-content-1d', site.lang)}</strong>{l10n('home-intro-content-1e', site.lang)}<strong>{l10n('home-intro-content-1f', site.lang)}</strong>{l10n('home-intro-content-1g', site.lang)}</p>
+            <p>{l10n('home-intro-content-2a', site.lang)}<strong>{l10n('home-intro-content-2b', site.lang)}</strong>{l10n('home-intro-content-2c', site.lang)}</p>
           </Container>
         </ContainerGroup>
         <TestimonialGroup>
@@ -62,13 +62,13 @@ export default async function MainPage({
             role="Senior UX Director"
           />
         </TestimonialGroup>
-        <ContainerGroup className="river forth">
+        <ContainerGroup className="dual forth reverse">
           <Container>
-            <Image src="/assets/i/design_engineering_handbook.png" width="264" height="403" alt={l10n('home-book', site.lang)} />
+            <Image src="/assets/i/design_engineering_handbook.png" width="264" height="403" alt={l10n('home-book-photo', site.lang)} />
           </Container>
           <Container>
-            <Heading level={2}><strong>Design Engineering</strong> Handbook</Heading>
-            <p>Learn how design engineering, an essential discipline to creating great products, brings together form and function while accelerating innovation. Written by industry leaders from Indeed, Mailchimp, The New York Times, and Minted, this book will help you connect design and engineering and work more efficiently as a team. Available in epub, PDF, and audiobook formats.</p>
+            <Heading level={2}><strong>{l10n('home-book-heading-1a', site.lang)}</strong>{l10n('home-book-heading-1b', site.lang)}</Heading>
+            <p>{l10n('home-book-content-1', site.lang)}</p>
           </Container>
         </ContainerGroup>
       </main>

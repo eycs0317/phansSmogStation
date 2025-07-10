@@ -145,6 +145,8 @@
 
   --color-footer-global-bg: var(--color-primary-000);
   --color-footer-global-text: var(--color-neutral-1000);
+  --color-footer-global-link: var(--color-secondary-300);
+  --color-footer-global-link-active: var(--color-secondary-500);
 
   --color-hero-heading-text: var(--color-neutral-1000);
   --color-hero-heading-bold-text: var(--color-neutral-500);
@@ -201,6 +203,7 @@
   --radius-button: var(--radius-sm);
 
 }
+body {font-family: "Noto Sans", sans-serif; font-optical-sizing: auto; font-weight:300; font-style: normal; font-variation-settings:"wdth" 100;}
 
 body main {display:flex; flex-direction:column; justify-content:center; width:100%; margin:auto;}
 @media (width >= 64rem) {

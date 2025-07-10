@@ -41,8 +41,8 @@
 .hero > .wrapper {display:grid; grid-auto-flow:dense; width:100%; grid-template-columns:repeat(12, minmax(0, 1fr)); padding:var(--padding-hero-y) var(--padding-hero-x);}
 .hero > .wrapper > div {grid-column:span 12 / span 12; text-align:center; align-content:center;}
 .hero > .wrapper > div > img {margin:auto; padding:var(--padding-hero-img-xy); width:70%;}
-.hero > .wrapper > div h1 {color:var(--color-hero-heading-text);}
-.hero > .wrapper > div h1 strong {color:var(--color-hero-heading-bold-text);}
+.hero > .wrapper > div h1 {color:var(--color-hero-heading-text); font-weight:300;}
+.hero > .wrapper > div h1 strong {color:var(--color-hero-heading-bold-text); font-weight:400;}
 .hero > .wrapper > div p {color:var(--color-hero-text);}
 .hero > .wrapper > div p strong {color:var(--color-hero-bold-text);}
 @media (width >= 48rem) {

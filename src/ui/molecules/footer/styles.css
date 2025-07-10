@@ -1,7 +1,12 @@
 .footerPage {background-color:var(--color-footer-global-bg); color:var(--color-footer-global-text);}
-.footerPage .wrapper {display:grid; grid-auto-flow:dense; width:100%; grid-template-columns:repeat(12, minmax(0, 1fr)); padding:var(--padding-footer-global-bg-y) var(--padding-footer-global-bg-x);}
+.footerPage .wrapper {display:grid; grid-auto-flow:dense; width:100%; grid-template-columns:repeat(12, minmax(0, 1fr)); padding:var(--padding-footer-global-bg-y) var(--padding-footer-global-bg-x); text-align:center;}
 .footerPage .wrapper > small {grid-column:span 12 / span 12;}
+.footerPage .wrapper > small a {color:var(--color-footer-global-link)}
+.footerPage .wrapper > small a:link,
+.footerPage .wrapper > small a:visited {color:var(--color-footer-global-link)}
+.footerPage .wrapper > small a:hover,
+.footerPage .wrapper > small a:active {color:var(--color-footer-global-link-active)}
 
 @media (width >= 48rem) {
-  .footerPage .wrapper {max-width:var(--container-5xl); margin:auto;}
+  .footerPage .wrapper {max-width:var(--container-5xl); margin:auto; text-align:left;}
 }
