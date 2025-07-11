@@ -4,7 +4,7 @@ import Image from 'next/image';
 // data
 import {getContent as testimonialContent} from '@/data/testimonial';
 
-// ui
+// ui - atoms
 import Heading from '@/ui/atoms/heading';
 
 // ui - molecules
