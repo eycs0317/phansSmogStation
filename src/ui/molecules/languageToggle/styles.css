@@ -1,0 +1,12 @@
+.languageToggle > ul {display:flex; flex-direction:row; justify-self:center;}
+.languageToggle > ul li {border-right:1px solid var(--color-footer-global-text);}
+.languageToggle > ul li:last-child {border:0;}
+.languageToggle > ul a {padding:var(--padding-nav-y) var(--padding-nav-x);}
+.languageToggle > ul a:link,
+.languageToggle > ul a:visited {color:var(--color-footer-global-link);}
+.languageToggle > ul a:hover,
+.languageToggle > ul a:active {color:var(--color-footer-global-link-active);}
+
+@media (width >= 48rem) {
+  .languageToggle > ul {justify-self:end;}
+}

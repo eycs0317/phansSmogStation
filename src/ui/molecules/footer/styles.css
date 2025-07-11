@@ -1,12 +1,16 @@
-.footerPage {background-color:var(--color-footer-global-bg); color:var(--color-footer-global-text);}
-.footerPage .wrapper {display:grid; grid-auto-flow:dense; width:100%; grid-template-columns:repeat(12, minmax(0, 1fr)); padding:var(--padding-footer-global-bg-y) var(--padding-footer-global-bg-x); text-align:center;}
-.footerPage .wrapper > small {grid-column:span 12 / span 12;}
-.footerPage .wrapper > small a {color:var(--color-footer-global-link)}
-.footerPage .wrapper > small a:link,
-.footerPage .wrapper > small a:visited {color:var(--color-footer-global-link)}
-.footerPage .wrapper > small a:hover,
-.footerPage .wrapper > small a:active {color:var(--color-footer-global-link-active)}
+.footerPage {background-color:var(--color-footer-global-bg); color:var(--color-footer-global-text); padding:var(--padding-footer-global-bg-y) var(--padding-footer-global-bg-x);}
+.footerPage .wrapper {display:grid; grid-auto-flow:dense; width:100%; grid-template-columns:repeat(12, minmax(0, 1fr)); text-align:center;}
+.footerPage .wrapper > p {grid-column:span 12 / span 12;}
+.footerPage .wrapper > p small a:link,
+.footerPage .wrapper > p small a:visited {color:var(--color-footer-global-link);}
+.footerPage .wrapper > p small a:hover,
+.footerPage .wrapper > p small a:active {color:var(--color-footer-global-link-active);}
+
+.footerPage .languageToggle {text-align:center; grid-column:span 12 / span 12; margin-top:var(--margin-footer-language-t);}
+.footerPage .languageToggle a {font-size:80%;}
 
 @media (width >= 48rem) {
   .footerPage .wrapper {max-width:var(--container-5xl); margin:auto; text-align:left;}
+  .footerPage .wrapper > p {grid-column:span 9 / span 9;}
+  .footerPage .languageToggle {text-align:center; grid-column:span 3 / span 3; margin-top:0;}
 }
