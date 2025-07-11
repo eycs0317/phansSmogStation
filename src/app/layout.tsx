@@ -7,6 +7,14 @@ import '@/app/globals.css';
 // nextjs
 import type {Metadata} from 'next';
 import Script from 'next/script';
+import {Noto_Sans} from 'next/font/google';
+
+const notoSans = Noto_Sans({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+});
 
 // lib
 import {getSession} from '@/lib/session';
@@ -60,13 +68,7 @@ export default async function RootLayout({
 
   return (
     <html lang={lang}>
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body>
+      <body className={notoSans.className}>
         <Header
           logo={{
             src: '/assets/i/logo.svg',

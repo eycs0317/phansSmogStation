@@ -222,6 +222,7 @@ a:active {color:var(--color-link-light-active); text-decoration:underline;}
 @media (width >= 48rem) {
   #pageHome .container > img {-webkit-box-reflect:unset;}
 }
+#pageHome .intro p:first-child {margin-bottom:1rem;}
 
 
 /* Pattern */

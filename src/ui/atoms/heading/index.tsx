@@ -2,7 +2,7 @@
 import type {JSX} from 'react';
 
 // styles
-import '@/ui/atoms/heading/heading.css';
+import '@/ui/atoms/heading/styles.css';
 
 // type
 type HeadingProps = {

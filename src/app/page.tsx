@@ -1,6 +1,9 @@
 // nextjs
 import Image from 'next/image';
 
+// data
+import {getContent as testimonialContent} from '@/data/testimonial';
+
 // ui
 import Heading from '@/ui/atoms/heading';
 
@@ -14,9 +17,10 @@ import Testimonial from '@/ui/molecules/testimonial';
 
 // lib
 import {getSite} from '@/lib/getSite';
+import {l10n} from '@/lib/l10n';
 
 // utils
-import {l10n} from '@/lib/l10n';
+import {getRandomFromArray} from '@/util/getRandomFromArray';
 
 // type
 export type PageProps = {
@@ -28,6 +32,9 @@ export default async function MainPage({
 }: PageProps) {
   const params = searchParams ? await searchParams : undefined;
   const site = await getSite(params);
+
+  const testimonials = testimonialContent();
+  const randomTestimonials = getRandomFromArray(testimonials, 2);
 
   return (
     <>
@@ -45,22 +52,20 @@ export default async function MainPage({
       <main role="main">
         <Message messageCode={site.messageCode ?? ''} />
         <ContainerGroup id="intro">
-          <Container>
+          <Container className="intro">
             <p>{l10n('home-intro-content-1a', site.lang)}<strong>{l10n('home-intro-content-1b', site.lang)}</strong>{l10n('home-intro-content-1c', site.lang)}<strong>{l10n('home-intro-content-1d', site.lang)}</strong>{l10n('home-intro-content-1e', site.lang)}<strong>{l10n('home-intro-content-1f', site.lang)}</strong>{l10n('home-intro-content-1g', site.lang)}</p>
             <p>{l10n('home-intro-content-2a', site.lang)}<strong>{l10n('home-intro-content-2b', site.lang)}</strong>{l10n('home-intro-content-2c', site.lang)}</p>
           </Container>
         </ContainerGroup>
         <TestimonialGroup>
-          <Testimonial
-            quote="When I managed the centralized Job Seeker Design Technology and Design Engineering team, Eddie offered me valuable guidance and helped me maintain high standards for my team."
-            author="Susan Le"
-            role="Senior UX Director"
-          />
-          <Testimonial
-            quote="When I managed the centralized Job Seeker Design Technology and Design Engineering team, Eddie offered me valuable guidance and helped me maintain high standards for my team."
-            author="Susan Le"
-            role="Senior UX Director"
-          />
+          {randomTestimonials.map(({quote, author, role}, i) => (
+            <Testimonial
+              key={i}
+              quote={quote}
+              author={author}
+              role={role}
+            />
+          ))}
         </TestimonialGroup>
         <ContainerGroup className="dual forth reverse">
           <Container>
