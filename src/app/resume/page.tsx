@@ -36,7 +36,7 @@ export default async function MainPage({
     <>
       <main role="main">
         <Message messageCode={site.messageCode ?? ''} />
-        <Resume resumeType="resumeUX" />
+        <Resume contentType="resumeUX" />
       </main>
     </>
   );

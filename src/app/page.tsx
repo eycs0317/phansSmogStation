@@ -1,9 +1,6 @@
 // nextjs
 import Image from 'next/image';
 
-// data
-import {getContent as testimonialContent} from '@/data/testimonial';
-
 // ui - atoms
 import Heading from '@/ui/atoms/heading';
 
@@ -13,14 +10,10 @@ import Message from '@/ui/molecules/message';
 import ContainerGroup from '@/ui/molecules/containerGroup';
 import Container from '@/ui/molecules/container';
 import TestimonialGroup from '@/ui/molecules/testimonialGroup';
-import Testimonial from '@/ui/molecules/testimonial';
 
 // lib
 import {getSite} from '@/lib/getSite';
 import {l10n} from '@/lib/l10n';
-
-// utils
-import {getRandomFromArray} from '@/util/getRandomFromArray';
 
 // type
 export type PageProps = {
@@ -32,9 +25,6 @@ export default async function MainPage({
 }: PageProps) {
   const params = searchParams ? await searchParams : undefined;
   const site = await getSite(params);
-
-  const testimonials = testimonialContent();
-  const randomTestimonials = getRandomFromArray(testimonials, 2);
 
   return (
     <>
@@ -57,16 +47,9 @@ export default async function MainPage({
             <p>{l10n('home-intro-content-2a', site.lang)}<strong>{l10n('home-intro-content-2b', site.lang)}</strong>{l10n('home-intro-content-2c', site.lang)}</p>
           </Container>
         </ContainerGroup>
-        <TestimonialGroup>
-          {randomTestimonials.map(({quote, author, role}, i) => (
-            <Testimonial
-              key={i}
-              quote={quote}
-              author={author}
-              role={role}
-            />
-          ))}
-        </TestimonialGroup>
+
+        <TestimonialGroup contentType="testimonial" />
+
         <ContainerGroup className="dual forth reverse">
           <Container>
             <Image src="/assets/i/design_engineering_handbook.png" width="264" height="403" alt={l10n('home-book-photo', site.lang)} />

@@ -8,42 +8,44 @@ import Heading from '@/ui/atoms/heading';
 import Hcard from '@/ui/molecules/hcard';
 
 // lib
-import {getSite} from '@/lib/getSite';
-import {l10n} from '@/lib/l10n';
+import {getContent} from '@/lib/getContent';
 
 // type
 export type ResumeProps = {
-  resumeType: string;
+  contentType?: string;
   className?: string;
   id?: string;
 };
 
 export default async function Resume({
-  resumeType = 'resumeUX',
+  contentType = 'resumeUX',
   className,
   id,
 }: ResumeProps) {
-  const classes = ['resume'];
+  const classes = ['resumeUX'];
   if (className) classes.push(className);
 
-  const site = await getSite();
+  const resume = getContent(contentType);
+  if (Array.isArray(resume)) {
+    throw new Error(`${contentType} returned an array — expected an object`);
+  }
 
   return (
     <div className={classes.join(' ')} id={id}>
       <Hcard
-        name={l10n(resumeType + '-name', site.lang)}
-        street1={l10n(resumeType + '-address-street-1', site.lang)}
-        street2={l10n(resumeType + '-address-street-2', site.lang)}
-        locality={l10n(resumeType + '-address-locality', site.lang)}
-        region={l10n(resumeType + '-address-region', site.lang)}
-        postalCode={l10n(resumeType + '-address-postal-code', site.lang)}
-        email={l10n(resumeType + '-email', site.lang)}
-        url={l10n(resumeType + '-url-linkedin', site.lang)}
-        phone={l10n(resumeType + '-phone', site.lang)}
+        name={resume.name}
+        street1={resume.street1}
+        street2={resume.street2}
+        locality={resume.locality}
+        region={resume.region}
+        postalCode={resume.postalCode}
+        email={resume.email}
+        url={resume.urlLinkedin}
+        phone={resume.phone}
       />
-      <section dangerouslySetInnerHTML={{ __html: l10n(resumeType + '-summary', site.lang) }} />
+      <section dangerouslySetInnerHTML={{ __html: resume.summary }} />
       <Heading level={2}>Core Competencies</Heading>
-      <section dangerouslySetInnerHTML={{ __html: l10n(resumeType + '-core-competencies', site.lang) }} />
+      <section dangerouslySetInnerHTML={{ __html: resume.competencies }} />
     </div>
   );
 }
