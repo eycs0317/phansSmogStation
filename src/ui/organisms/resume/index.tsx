@@ -6,6 +6,7 @@ import Heading from '@/ui/atoms/heading';
 
 // ui - molecules
 import Hcard from '@/ui/molecules/hcard';
+import ResumeDescription from '@/ui/molecules/resumeDescription';
 
 // lib
 import {getContent} from '@/lib/getContent';
@@ -43,6 +44,13 @@ export default async function Resume({
       <section dangerouslySetInnerHTML={{ __html: resume.summary }} />
       <Heading level={2}>Core Competencies</Heading>
       <section dangerouslySetInnerHTML={{ __html: resume.competencies }} />
+      <ResumeDescription
+        experience={resume.experience}
+        open={true}
+      />
+      <ResumeDescription
+        experience={resume.additionalExperience}
+      />
     </div>
   );
 }

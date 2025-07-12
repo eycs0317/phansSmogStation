@@ -1,10 +1,10 @@
 // data
 import {getContent as getTestimonial} from '@/data/testimonial';
 import {getContent as getResumeDE} from '@/data/resumeDE';
-import {getContent as getResumeUX} from '@/data/resumeUX';
+import {getContent as getResumeUX, Content} from '@/data/resumeUX';
 
 export function getContent(contentType: 'testimonial'): Record<string, string>[];
-export function getContent(contentType: 'resumeUX' | 'resumeDE'): Record<string, string>;
+export function getContent(contentType: 'resumeUX' | 'resumeDE'): Content;
 export function getContent(
   contentType: string,
 ): unknown {
