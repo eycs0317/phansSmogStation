@@ -12,13 +12,13 @@ import {getContent} from '@/lib/getContent';
 
 // type
 export type ResumeProps = {
-  contentType?: string;
+  contentType: 'resumeUX' | 'resumeDE';
   className?: string;
   id?: string;
 };
 
 export default async function Resume({
-  contentType = 'resumeUX',
+  contentType,
   className,
   id,
 }: ResumeProps) {
@@ -26,9 +26,6 @@ export default async function Resume({
   if (className) classes.push(className);
 
   const resume = getContent(contentType);
-  if (Array.isArray(resume)) {
-    throw new Error(`${contentType} returned an array — expected an object`);
-  }
 
   return (
     <div className={classes.join(' ')} id={id}>

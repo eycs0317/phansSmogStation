@@ -1,34 +1,22 @@
 // data
 import {getContent as getTestimonial} from '@/data/testimonial';
 import {getContent as getResumeDE} from '@/data/resumeDE';
-import {getContent as getrResumeUX} from '@/data/resumeUX';
+import {getContent as getResumeUX} from '@/data/resumeUX';
 
-// type
-type Content =
-  | Array<Record<string, string>>
-  | Record<string, string>;
-
+export function getContent(contentType: 'testimonial'): Record<string, string>[];
+export function getContent(contentType: 'resumeUX' | 'resumeDE'): Record<string, string>;
 export function getContent(
   contentType: string,
-): Content {
-  let content: Array<Record<string, string>> | Record<string, string>;
+): unknown {
 
   switch (contentType) {
     case 'testimonial':
-      content = getTestimonial();
-      break;
+      return getTestimonial();
     case 'resumeUX':
-      content = getrResumeUX();
-      break;
+      return getResumeUX();
     case 'resumeDE':
-      content = getResumeDE();
-      break;
+      return getResumeDE();
     default:
       throw new Error(`Unsupported content type: ${contentType}`);
   }
-
-  return (
-    content ??
-    `[${contentType.toUpperCase()}]`
-  );
 }

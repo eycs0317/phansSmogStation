@@ -12,13 +12,13 @@ import {getRandomFromArray} from '@/util/getRandomFromArray';
 
 // type
 export type TestimonialGroupProps = {
-  contentType?: string;
+  contentType: 'testimonial';
   className?: string;
   id?: string;
 };
 
 export default function TestimonialGroup({
-  contentType = 'testimonial',
+  contentType,
   className,
   id,
 }: TestimonialGroupProps) {
@@ -26,9 +26,6 @@ export default function TestimonialGroup({
   if (className) classes.push(className);
 
   const testimonials = getContent(contentType);
-  if (!Array.isArray(testimonials)) {
-    throw new Error(`${contentType} is not an array — cannot use in TestimonialGroup`);
-  }
   const randomTestimonials = getRandomFromArray(testimonials, 2);
 
   return (
