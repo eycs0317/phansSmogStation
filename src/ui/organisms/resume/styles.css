@@ -1,29 +1,19 @@
-.containerGroup {display:grid; grid-auto-flow:dense; width:100%; grid-template-columns:repeat(12, minmax(0, 1fr));}
+.resume {padding:var(--padding-container-xy);}
+.resume h2 {text-transform:uppercase; color:var(--color-primary-200); font-weight:500; font-size:var(--text-base); font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif; border-bottom:1px solid var(--color-neutral-300); padding-bottom:var(--spacing-resume-section-y); margin-top:var(--spacing-resume-section-y);}
+.resume .h-card {border-bottom:1px solid var(--color-neutral-300); padding-bottom:var(--spacing-resume-section-y);}
+.resume .h-card .p-name {text-transform:uppercase; color:var(--color-primary-200); font-weight:700; font-size:var(--text-3xl); font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;}
+.resume .summary,
+.resume .resumeDescription {padding:var(--spacing-resume-section-y) 0;}
+.resume .summary p {margin-bottom:var(--spacing-resume-section-y);}
+.resume .summary p:last-child {margin-bottom:0;}
+.resume .competencies {padding:var(--spacing-resume-section-y) 0;}
+.resume .competencies dl {overflow:auto;}
+.resume .competencies dt {float:left; clear:left; font-weight:bold;}
+.resume .competencies dt::after {content: ":"; margin-right:var(--spacing-resume-content-x);}
+.resume .resumeDescription details {margin-bottom:1rem;}
+.resume .resumeDescription summary {list-style:none;}
 
-@media (width >= 48rem) {
-  .containerGroup.dual > .container {grid-column:span 6 / span 6;}
-  .containerGroup.dual.forth > .container:nth-child(2n-1) {grid-column:span 3;}
-  .containerGroup.dual.forth > .container:nth-child(2n) {grid-column:span 9;}
-  .containerGroup.dual.forth.reverse > .container:nth-child(2n-1) {grid-column:10 / span 3;}
-  .containerGroup.dual.forth.reverse > .container:nth-child(2n) {grid-column:1 / span 9;}
-  .containerGroup.tri > .container {grid-column:span 4 / span 4;}
-  .containerGroup.quad > .container {grid-column:span 6 / span 6;}
-  .containerGroup.hex > .container {grid-column:span 4 / span 4;}
-  .containerGroup.river > .container {grid-column:span 6;}
-  .containerGroup.river > .container:nth-child(4n-1) {grid-column:7 / span 6;}
-  .containerGroup.river > .container:nth-child(4n) {grid-column:1 / span 6;}
-  .containerGroup.river.third > .container:nth-child(4n-3) {grid-column:span 4;}
-  .containerGroup.river.third > .container:nth-child(4n-2) {grid-column:span 8;}
-  .containerGroup.river.third > .container:nth-child(4n-1) {grid-column:9 / span 4;}
-  .containerGroup.river.third > .container:nth-child(4n) {grid-column:1 / span 8;}
-  .containerGroup.river.forth > .container:nth-child(4n-3) {grid-column:span 3;}
-  .containerGroup.river.forth > .container:nth-child(4n-2) {grid-column:span 9;}
-  .containerGroup.river.forth > .container:nth-child(4n-1) {grid-column:10 / span 3;}
-  .containerGroup.river.forth > .container:nth-child(4n) {grid-column:1 / span 9;}
-}
-@media (width >= 64rem) {
-  .containerGroup.dual > .container {grid-column:span 6 / span 6;}
-  .containerGroup.tri > .container {grid-column:span 4 / span 4;}
-  .containerGroup.quad > .container {grid-column:span 3 / span 3;}
-  .containerGroup.hex > .container {grid-column:span 2 / span 2;}
-}
+.resume .resumeDescription h3 {font-weight:500; font-size:var(--text-base);}
+.resume .resumeDescription p {margin-top:1rem;}
+.resume .resumeDescription ul {list-style:disc; margin:1rem 0 0 3rem;}
+

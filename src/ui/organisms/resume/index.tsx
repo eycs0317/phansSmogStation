@@ -23,7 +23,7 @@ export default async function Resume({
   className,
   id,
 }: ResumeProps) {
-  const classes = ['resumeUX'];
+  const classes = ['resume'];
   if (className) classes.push(className);
 
   const resume = getContent(contentType);
@@ -41,13 +41,15 @@ export default async function Resume({
         url={resume.urlLinkedin}
         phone={resume.phone}
       />
-      <section dangerouslySetInnerHTML={{ __html: resume.summary }} />
+      <section dangerouslySetInnerHTML={{ __html: resume.summary }} className="summary" />
       <Heading level={2}>Core Competencies</Heading>
-      <section dangerouslySetInnerHTML={{ __html: resume.competencies }} />
+      <section dangerouslySetInnerHTML={{ __html: resume.competencies }} className="competencies" />
+      <Heading level={2}>Professional Experience</Heading>
       <ResumeDescription
         experience={resume.experience}
         open={true}
       />
+      <Heading level={2}>Additional Experience</Heading>
       <ResumeDescription
         experience={resume.additionalExperience}
       />

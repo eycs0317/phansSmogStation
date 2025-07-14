@@ -1,6 +1,6 @@
-h1 {font-size: var(--text-6xl); font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;}
-h2 {font-size: var(--text-5xl); font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;}
-h3 {font-size: var(--text-4xl); font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;}
-h4 {font-size: var(--text-3xl); font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;}
-h5 {font-size: var(--text-2xl); font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;}
-h6 {font-size: var(--text-xl); font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;}
+h1 {font-size:var(--text-6xl); font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;}
+h2 {font-size:var(--text-5xl); font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;}
+h3 {font-size:var(--text-4xl); font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;}
+h4 {font-size:var(--text-3xl); font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;}
+h5 {font-size:var(--text-2xl); font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;}
+h6 {font-size:var(--text-xl); font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;}

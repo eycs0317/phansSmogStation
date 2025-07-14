@@ -1,6 +1,9 @@
 // styles
 import '@/ui/molecules/hcard/styles.css';
 
+// util
+import {formatUSPhone} from '@/util/formatUSPhone';
+
 // type
 export type HcardProps = {
   name?: string;
@@ -64,7 +67,7 @@ export default function Hcard({
         </div>
       )}
 
-      {phone && <div className="p-tel">{phone}</div>}
+      {phone && <div className="p-tel">{formatUSPhone(phone)}</div>}
     </div>
   );
 }
