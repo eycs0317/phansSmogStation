@@ -7,7 +7,7 @@ import '@/ui/molecules/hero/styles.css';
 // type
 export type HeroProps = {
   primary: ReactNode;
-  secondary: ReactNode;
+  secondary?: ReactNode;
   className?: string;
   id?: string;
 };
@@ -25,7 +25,7 @@ export default function Hero({
     <section className={classes.join(' ')} id={id}>
       <div className="wrapper">
         <div>{primary}</div>
-        <div>{secondary}</div>
+        {secondary && <div>{secondary}</div>}
       </div>
     </section>
   );
