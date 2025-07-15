@@ -1,11 +1,11 @@
 .languageToggle > ul {display:flex; flex-direction:row; justify-self:center;}
 .languageToggle > ul li {border-right:1px solid var(--color-footer-global-text);}
 .languageToggle > ul li:last-child {border:0;}
-.languageToggle > ul a {padding:var(--padding-nav-y) var(--padding-nav-x);}
-.languageToggle > ul a:link,
-.languageToggle > ul a:visited {color:var(--color-footer-global-link);}
-.languageToggle > ul a:hover,
-.languageToggle > ul a:active {color:var(--color-footer-global-link-active);}
+.languageToggle > ul button {cursor:pointer; font-size:80%; padding:0 var(--padding-nav-x);}
+.languageToggle > ul button:link,
+.languageToggle > ul button:visited {color:var(--color-footer-global-link);}
+.languageToggle > ul button:hover,
+.languageToggle > ul button:active {color:var(--color-footer-global-link-active); text-decoration:underline;}
 
 @media (width >= 48rem) {
   .languageToggle > ul {justify-self:end;}
