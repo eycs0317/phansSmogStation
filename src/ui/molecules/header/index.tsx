@@ -18,12 +18,14 @@ type LogoProps = {
 
 export type HeaderProps = {
   logo: LogoProps;
+  children?: React.ReactNode;
   className?: string | null;
   id?: string;
 };
 
 export default function Header({
   logo,
+  children,
   className,
   id,
 }: HeaderProps) {
@@ -51,6 +53,7 @@ export default function Header({
       >
         {logoImage}
       </Link>
+      {children}
     </header>
   );
 }
