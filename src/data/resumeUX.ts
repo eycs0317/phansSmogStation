@@ -65,7 +65,7 @@ export function getContent(): Resume {
       company: "PayPal",
       locality: "San Jose",
       region: "CA",
-      time: "June 2006 - June 2011",
+      time: "2006 - 2011",
       role: "Frontend Engineering Manager",
       intro: "Led the Consumer Products and Consumer Experience Web Development teams, successfully delivering critical new product investments that enhanced the overall consumer journey, improved user satisfaction, and drove significant growth in product adoption and engagement.",
       description: ""
@@ -74,7 +74,7 @@ export function getContent(): Resume {
       company: "Robert Half International",
       locality: "Pleasanton",
       region: "CA",
-      time: "June 2005 - June 2006",
+      time: "2005 - 2006",
       role: "Senior UI Designer / User Researcher",
       intro: "Conducted extensive user research to design and develop a modern, powerful corporate intranet, significantly enhancing internal communications and workflow efficiency, and supporting thousands of employees across hundreds of offices nationwide.",
       description: ""
@@ -83,7 +83,7 @@ export function getContent(): Resume {
       company: "Cisco",
       locality: "San Jose",
       region: "CA",
-      time: "June 2000 - June 2005",
+      time: "2000 - 2005",
       role: "Senior UI Designer / User Researcher",
       intro: "Prototyped and conducted usability studies for executive briefing center applications, and subsequently updated internal UI portals to ensure consistent and seamless user experiences across all platforms.",
       description: ""

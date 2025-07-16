@@ -1,7 +1,8 @@
 // data
+import type {Resume} from "@/types/resume";
 import {getContent as getTestimonial} from '@/data/testimonial';
 import {getContent as getResumeDE} from '@/data/resumeDE';
-import {getContent as getResumeUX, Resume} from '@/data/resumeUX';
+import {getContent as getResumeUX} from '@/data/resumeUX';
 
 export function getContent(contentType: 'testimonial'): Record<string, string>[];
 export function getContent(contentType: 'resumeUX' | 'resumeDE'): Resume;
