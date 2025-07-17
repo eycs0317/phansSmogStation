@@ -14,13 +14,21 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const resume = await req.json();
+    const body = await req.json();
+    const resume = body.resume;
+    if (!resume) {
+      return NextResponse.json(
+        { error: 'Missing resume data' },
+        { status: 400 }
+      );
+    }
+    const filename = body.filename ?? 'resume.ts';
 
     const filePath = await writeDataToFile(
-      'resume.ts',
+      filename,
       'getContent',
       resume,
-      { typeName: "Resume", importPath: "@/types/resume" }
+      { typeName: 'Resume', importPath: '@/types/resume' }
     );
 
     return NextResponse.json({

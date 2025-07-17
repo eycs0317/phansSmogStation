@@ -14,10 +14,18 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const testimonials: Record<string, string>[] = await req.json();
+    const body = await req.json();
+    const testimonials: Record<string, string>[] = body.testimonial;
+    if (!testimonials) {
+      return NextResponse.json(
+        { error: 'Missing testimonials data' },
+        { status: 400 }
+      );
+    }
+    const filename = body.filename ?? 'testimonial.ts';
 
     const filePath = await writeDataToFile(
-      'testimonial.ts',
+      filename,
       'getContent',
       testimonials
     );
