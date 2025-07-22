@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
-    const testimonials: Record<string, string>[] = body.testimonial;
+    const testimonials: Record<string, string>[] = body.testimonials;
     if (!testimonials) {
       return NextResponse.json(
         { error: 'Missing testimonials data' },
