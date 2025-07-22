@@ -52,6 +52,7 @@ export default async function Resume({
       <Heading level={2}>Additional Experience</Heading>
       <ResumeDescription
         experience={resume.additionalExperience}
+        open={true}
       />
     </div>
   );
