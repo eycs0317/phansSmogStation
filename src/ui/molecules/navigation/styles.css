@@ -1,3 +1,10 @@
+/* Navigation */
+.nav a,
+.nav a:link,
+.nav a:visited,
+.nav a:hover,
+.nav a:active {cursor:pointer;}
+
 /* Navigation - Color */
 .nav {background:var(--color-nav-bg); align-self:center;}
 .nav > ul > li > a:link,

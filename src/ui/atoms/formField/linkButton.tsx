@@ -1,13 +1,14 @@
 // nextjs
 import Image from 'next/image';
+import Link from 'next/link';
 
-export type FormButtonProps = {
+export type LinkButtonProps = {
   fieldData: {
-    id: string;
-    type: 'button' | 'submit' | 'reset';
+    href: string;
     value: string;
+    target?: string;
+    id?: string;
     className?: string;
-    isDisabled?: boolean;
     image?: {
       src: string;
       alt: string;
@@ -18,23 +19,21 @@ export type FormButtonProps = {
   };
 };
 
-export default function FormButton({fieldData, ...rest}: FormButtonProps) {
+export default function LinkButton({fieldData, ...rest}: LinkButtonProps) {
   const classes = ['formButton'];
   if (fieldData.className) classes.push(fieldData.className);
 
   return (
-    <button
-      type={fieldData.type}
-      name={fieldData.id}
-      value={fieldData.value}
+    <Link
+      href={fieldData.href}
+      target={fieldData.target}
       className={classes.join(' ')}
       id={fieldData.id}
-      disabled={(fieldData.isDisabled) ? fieldData.isDisabled : false}
       onClick={fieldData.onClick}
       {...rest}>{fieldData.value}
       {(() => {
         return (fieldData.image) ? <Image src={fieldData.image.src} alt={fieldData.image.alt} width={fieldData.image.width} height={fieldData.image.height} priority={true} /> : null;
       })()}
-    </button>
+    </Link>
   );
 }

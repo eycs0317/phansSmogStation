@@ -45,7 +45,9 @@
 .hero > .wrapper > div h1 strong {color:var(--color-hero-heading-bold-text); font-weight:400;}
 .hero > .wrapper > div p {color:var(--color-hero-text);}
 .hero > .wrapper > div p strong {color:var(--color-hero-bold-text);}
+
 @media (width >= 48rem) {
   .hero > .wrapper {max-width:var(--container-5xl); margin:auto;}
   .hero > .wrapper > div {grid-column:span 6 / span 6; text-align:left;}
 }
+

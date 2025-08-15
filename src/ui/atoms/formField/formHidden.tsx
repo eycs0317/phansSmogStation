@@ -1,12 +1,3 @@
-/*
-  USAGE:
-  ===========
-  <FormField type='hidden' fieldData={{
-    id: 'redirectTo',                     @required
-    value: '/dashboard'                   @optional
-  }} />
-*/
-
 export type FormHiddenProps = {
   fieldData: {
     id: string;
@@ -16,6 +7,11 @@ export type FormHiddenProps = {
 
 export default function FormHidden({fieldData}: FormHiddenProps) {
   return (
-    <input type="hidden" name={fieldData.id} id={fieldData.id} defaultValue={fieldData.value ?? undefined} />
+    <input
+      type="hidden"
+      name={fieldData.id}
+      id={fieldData.id}
+      defaultValue={fieldData.value ?? undefined}
+    />
   );
 }

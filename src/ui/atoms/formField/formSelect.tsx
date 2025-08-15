@@ -30,29 +30,35 @@ export type FormSelectProps = {
     }[];
     selectedID?: string;
     className?: string;
-    wrapperClassName?: string;
     isRequired?: boolean;
     isError?: boolean;
     helper?: string;
+    onChange?: () => void;
   };
 };
 
 export default function FormSelect({fieldData}: FormSelectProps) {
-  const defaultWrapperClassName = 'flex flex-col';
-  const defaultClassName = 'border p-2 w-full';
+  const classes = ['formSelect'];
+  if (fieldData.className) classes.push(fieldData.className);
+  if (fieldData.isError) classes.push('formError');
+  if (fieldData.isRequired) classes.push('formRequired');
+
   const optionsData = fieldData.options;
 
   return (
-    <div className={defaultWrapperClassName + ((fieldData.wrapperClassName) ? ' ' + fieldData.wrapperClassName : '') + ((fieldData.isRequired) ? ' formRequired' : '') + ((fieldData.isError) ? ' formError' : '')}>
+    <div className={classes.join(' ')}>
       <label htmlFor={fieldData.id}>{fieldData.label}:</label>
-      <select name={fieldData.id} id={fieldData.id} className={defaultClassName + ((fieldData.className) ? ' ' + fieldData.className : '')}  defaultValue={fieldData.selectedID ?? undefined}>
+      <select
+        name={fieldData.id}
+        id={fieldData.id}
+        defaultValue={fieldData.selectedID ?? undefined}
+        onChange={fieldData.onChange}
+      >
         {optionsData.map((optionData) => (
           <option key={optionData.id} value={optionData.id}>{optionData.value}</option>
         ))}
       </select>
-      {(() => {
-        return (fieldData.helper) ? <small className="helper">{fieldData.helper}</small> : null;
-      })()}
+      {fieldData.helper && <small className="helper">{fieldData.helper}</small>}
     </div>
   );
 }
