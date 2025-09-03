@@ -24,8 +24,8 @@ export function HeroVideo({
   </video>
 
   <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-    <h1 className="text-6xl font-bold drop-shadow-lg">{title}</h1>
-    <p className="text-2xl mt-4 drop-shadow">{content}</p>
+    <h2 className="text-6xl drop-shadow-xl/50">{title}</h2>
+    <p className="text-2xl mt-4 drop-shadow-xl/50">{content}</p>
   </div>
 </div>
 
