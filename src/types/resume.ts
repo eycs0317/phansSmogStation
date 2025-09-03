@@ -24,4 +24,10 @@ export type Resume = {
   competencies: string;
   experience: ResumeExperience[];
   additionalExperience: ResumeExperience[];
+  publications: {
+    type: string;
+    title: string;
+    publisher: string;
+    description: string;
+  };
 };

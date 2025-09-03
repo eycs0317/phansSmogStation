@@ -1,5 +1,5 @@
 .resume {padding:var(--padding-container-xy);}
-.resume h2 {text-transform:uppercase; color:var(--color-primary-200); font-weight:500; font-size:var(--text-base); font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif; border-bottom:1px solid var(--color-neutral-300); padding-bottom:var(--spacing-resume-section-y); margin-top:var(--spacing-resume-section-y);}
+.resume h2 {text-transform:uppercase; color:var(--color-primary-200); font-weight:500; font-size:var(--text-xl); font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif; border-bottom:1px solid var(--color-neutral-300); padding-bottom:var(--spacing-resume-section-y); margin-top:var(--spacing-resume-section-y);}
 .resume .h-card {border-bottom:1px solid var(--color-neutral-300); padding-bottom:var(--spacing-resume-section-y);}
 .resume .h-card .p-name {text-transform:uppercase; color:var(--color-primary-200); font-weight:700; font-size:var(--text-3xl); font-family:"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;}
 .resume .summary,
@@ -13,7 +13,11 @@
 .resume .resumeDescription details {margin-bottom:1rem;}
 .resume .resumeDescription summary {list-style:none;}
 
-.resume .resumeDescription h3 {font-weight:500; font-size:var(--text-base);}
+.resume .resumeDescription h3 {font-weight:500; font-size:var(--text-xl);}
 .resume .resumeDescription p {margin-top:1rem;}
 .resume .resumeDescription ul {list-style:disc; margin:1rem 0 0 3rem;}
+
+.resume .publications {padding:var(--spacing-resume-section-y) 0;}
+.resume .publications p {margin-top:1rem;}
+.resume .publications p:first-child {margin-top:0;}
 

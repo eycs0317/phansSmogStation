@@ -37,6 +37,8 @@ export default function ResumeDescription({
           {(company || locality || region || time || role) && (
             <summary>
               {company && <Heading level={3}>{company}</Heading>}
+              {role && <div className="p-role">{role}</div>}
+              {time && <time>{time}</time>}
               {(locality || region) && (
                 <div className="p-adr h-adr">
                   <div>
@@ -46,8 +48,6 @@ export default function ResumeDescription({
                   </div>
                 </div>
               )}
-              {time && <time>{time}</time>}
-              {role && <div>{role}</div>}
             </summary>
           )}
           {intro && <p>{intro}</p>}

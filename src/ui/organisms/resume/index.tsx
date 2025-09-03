@@ -42,7 +42,7 @@ export default async function Resume({
         phone={resume.phone}
       />
       <section dangerouslySetInnerHTML={{ __html: resume.summary }} className="summary" />
-      <Heading level={2}>Core Competencies</Heading>
+      <Heading level={2}>Core Leadership Strengths</Heading>
       <section dangerouslySetInnerHTML={{ __html: resume.competencies }} className="competencies" />
       <Heading level={2}>Professional Experience</Heading>
       <ResumeDescription
@@ -54,6 +54,11 @@ export default async function Resume({
         experience={resume.additionalExperience}
         open={true}
       />
+      <Heading level={2}>Publications & Recognition</Heading>
+      <section className="publications">
+        <p><strong>{resume.publications.type}</strong>, <em>{resume.publications.title}</em> - {resume.publications.publisher}</p>
+        <p>{resume.publications.description}</p>
+      </section>
     </div>
   );
 }

@@ -1,1 +1,5 @@
+.p-role {font-style: italic;}
 
+@media (width >= 48rem) {
+    time {float:right; font-size:.875rem;}
+}
