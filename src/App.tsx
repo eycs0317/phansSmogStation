@@ -9,7 +9,7 @@ import { Footer } from './components/Footer'
 
 import heroVideoMov from './assets/hero.mov'
 import smogchecklogo from './assets/smogchecklogo.jpg'
-import blueSmogCheckLogo from './assets/blueSmogCheckLogo.png'
+
 
 function App() {
   return (
