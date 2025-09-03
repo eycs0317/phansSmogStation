@@ -3,7 +3,7 @@ export function Contact() {
     <div className="flex flex-col justify-center min-w-max md:w-1/2 w-full">
       <h2 className="text-2xl font-bold">Phan's Smog Station</h2>
       <div className="mt-2 mb-4">
-        <p className="text-lg">6938 Thornton Ave, Newark, CA 94560</p>
+        <p className="text-lg">6938 Thornton Ave,</p>
         <p className="text-lg">Newark, CA 94560</p>
       </div>
       <p className="text-lg mb-4">
