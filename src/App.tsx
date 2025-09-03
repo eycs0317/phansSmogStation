@@ -1,51 +1,66 @@
 
 
-import './App.css'
-import { Banner } from './components/Logo'
-import { Slogan } from './components/Slogan'
-import { Review } from './components/review'
-import image01 from './assets/image01.jpg'
+import { Banner } from './components/Banner'
+import { HeroVideo } from './components/HeroVideo'
+import { Review } from './components/Review'
+import { Contact } from './components/Contact'
+import { GoogleMap } from './components/GoogleMap'
+
+
+import heroVideoMov from './assets/hero.mov'
 import smogchecklogo from './assets/smogchecklogo.jpg'
 function App() {
-
-
   return (
-    <>
-      <div className='w-full  flex flex-col items-center justify-center bg-gray-200'>
-        <Banner size={3}>Phan's Smog Station</Banner>
+    <div className='px-[10%] mb-20 '>
+      <div className='w-full  flex flex-col items-center justify-center '>
 
-        <Slogan
-          backgroundImage={image01}
-          title="Welcome to Phan's Smog Station"
-          content="Your one-stop shop for all your smog check needs!" />
+        <Banner size={3}>Phan's <span className='text-2xl font-normal'>Smog Station</span></Banner>
 
-          <div className='flex items-start w-[80%] gap-14 mt-8 '>
-            <img src={smogchecklogo} className='w-96 h-72 object-cover rounded-md  shadow-lg' />
-            <div>
-              <h2 className='text-3xl font-bold mb-8'>Services</h2>
-              <p>  We provide comprehensive smog check services for all types of vehicles,
-  including cars, trucks, SUVs, and hybrids. Whether you need a biennial
-  inspection, out-of-state certification, or a STAR smog test, our station is
-  equipped with the latest technology to deliver quick and reliable results.</p>
-            </div>
-          </div>
+        <HeroVideo
+          videoMov={heroVideoMov}
+          title="Drive Worry-Free"
+          content="We make smog checks simple, fast, and stress-free, so you can get back on the road with peace of mind."
+        />
 
-          <div className='flex w-[80%] justify-between mt-8 gap-4'>
+        {/* Services Section */}
+        <section className="flex flex-col md:flex-row items-center md:items-start gap-8 mt-8  mx-auto">
+        <img
+          src={smogchecklogo}
+          className="w-full md:w-96 h-64 md:h-72 object-cover rounded-md shadow-lg"
+          alt="Smog check service"
+        />
+        <div className="text-center md:text-left">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-8">
+            Services
+          </h2>
+          <p className="text-base md:text-lg leading-relaxed">
+            At Phan’s Smog Station, we specialize in providing reliable smog
+            checks to keep your vehicle compliant with California emissions
+            standards. Our process is quick, efficient, and designed to get
+            you back on the road without hassle. With friendly service and
+            accurate testing, we make smog checks simple and stress-free.
+          </p>
+        </div>
+      </section>
 
-              <Review name="John D." year="2022" review="Phan's Smog and auto is excellent. A wonderful business I will always support, and I can't recommend them high enough. They are fast, give quality service, and at better than fair prices!
 
-If they read this review, I hope they realize just what a great business they are. I will always suggest them for all our vehicle maintenance needs!
+        {/* Reviews Section */}
+        <section className='flex  justify-between mt-8 gap-4'>
+          <Review name="Manpreet K." year="2025" review="“Fast, great customer service, and Nate even kept his shop open an extra 15 minutes because I was running late”"/>
+          <Review name="Nick L." year="2025" review="“Have been here for flat tires, replacements, smog...they do everything well and with a smile.”"/>
+          <Review name="Cythia C." year="2025" review="“I was helped by Tri, he was super friendly and the service was QUICK, and affordable and the information was sent directly to the DMV!”"/>
+        </section>
 
-Thank you, Anh Phan..." />
+        {/* Contact section */}
+        <section className='mt-8 flex gap-20 w-full md:flex-row flex-col flex  justify-center'>
+          <Contact />
 
-              <Review name="John D." year="2022" review="Given my last review was four years ago. I figured I'd give you guys an update. I go here every year for my smog. I go here every time I need a tire. Every time I am here, I am at the point where the owner catches up with me. Even if I call around closing time, they will always try service me. Phan's shop is probably one of the last real mechanics, trying to give people a deal versus up charging every single customer. I have saved hundreds of dollars and time just letting Anh change my tire and he will always let me know if my car is acting weird. This is a real business that actually wants you to drive your car." />
+            <GoogleMap />
 
-              <Review name="John D." year="2022" review="This is my go-to smog station in Newark. No appointment needed--they accept walk-ins and complete smog checks quickly. The owner is welcoming, and the pricing is fair." />
 
-          </div>
-
+        </section>
       </div>
-    </>
+    </div>
   )
 }
 

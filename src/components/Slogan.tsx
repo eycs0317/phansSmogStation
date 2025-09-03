@@ -7,7 +7,7 @@ export interface SloganProps {
 export function Slogan({ backgroundImage, title, content }: SloganProps) {
   return (
     <div
-      className="bg-cover bg-center h-screen flex justify-center items-center w-[80%]"
+      className="bg-cover bg-center h-screen flex justify-center items-center "
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="text-white text-center">
