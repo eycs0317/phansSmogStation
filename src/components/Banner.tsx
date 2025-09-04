@@ -6,7 +6,7 @@ export interface BannerProps {
 export function Banner({ children, size = 1 }: BannerProps) {
   const fontSize = `text-${size}xl`;
   return (
-    <div className={`bg-red-800 p-2 rounded-md ${fontSize}  font-bold bg-red-500 w-full text-white text-center`}>
+    <div className={`bg-red-800 p-2 ${fontSize}  font-bold bg-red-500 w-full text-white text-center`}>
       {children}
     </div>
   );
