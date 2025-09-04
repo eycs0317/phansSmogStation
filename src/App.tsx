@@ -16,7 +16,7 @@ function App() {
     <div className=' mb-20 max-w-[1400px] mx-auto '>
       <div className='w-full  block md:flex flex-col items-center justify-center bg-gray-100'>
 
-        <Banner size={3}>Phan's <span className='text-2xl font-normal'>Smog Station</span></Banner>
+        <Banner size={3}><h1 className='text-3xl font-bold'>Phan's  <span className='text-2xl font-normal'>Smog Station</span></h1></Banner>
 
         <HeroVideo
           videoMov={heroVideoMov}
