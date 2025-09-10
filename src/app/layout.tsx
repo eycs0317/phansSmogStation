@@ -30,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   const localizedTitles: Record<string, string> = {
     'en-US': 'edlou.com',
-    'zh-HK': 'edlou.com (NEW)',
+    'zh-HK': 'edlou.com',
   };
 
   return {
