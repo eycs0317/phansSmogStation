@@ -1,13 +1,13 @@
 // react
-import React, {type ReactNode} from 'react';
+import React, { type ReactNode } from 'react';
 
 // styles
 import '@/app/globals.css';
 
 // nextjs
-import type {Metadata} from 'next';
+import type { Metadata } from 'next';
 import Script from 'next/script';
-import {Noto_Sans} from 'next/font/google';
+import { Noto_Sans } from 'next/font/google';
 
 const notoSans = Noto_Sans({
   subsets: ['latin'],
@@ -17,8 +17,8 @@ const notoSans = Noto_Sans({
 });
 
 // lib
-import {getSession} from '@/lib/session';
-import {l10n} from '@/lib/l10n';
+import { getSession } from '@/lib/session';
+import { l10n } from '@/lib/l10n';
 
 // ui
 import Header from '@/ui/molecules/header';
@@ -30,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   const localizedTitles: Record<string, string> = {
     'en-US': 'edlou.com',
-    'zh-HK': 'edlou.com',
+    'zh-HK': 'edlou.com (NEW)',
   };
 
   return {
@@ -60,9 +60,7 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-export default async function RootLayout({
-  children,
-}: LayoutProps) {
+export default async function RootLayout({ children }: LayoutProps) {
   const session = await getSession();
   const lang = session?.lang ?? 'en-US';
 
@@ -82,11 +80,11 @@ export default async function RootLayout({
           year="2025"
           entity={{
             url: '/',
-            name: 'edlou.com'
+            name: 'edlou.com',
           }}
         />
-        
-        <Script 
+
+        <Script
           id="set-page-id"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -135,7 +133,7 @@ export default async function RootLayout({
                 // Listen for back/forward navigation
                 window.addEventListener('popstate', updatePageId);
               })();
-            `
+            `,
           }}
         />
       </body>
