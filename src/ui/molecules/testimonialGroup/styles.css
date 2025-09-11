@@ -1,6 +1,0 @@
-.testimonialGroup {display:grid; grid-auto-flow:dense; width:100%; grid-template-columns:repeat(12, minmax(0, 1fr));}
-.testimonialGroup > .testimonial {grid-column:span 12;}
-
-@media (width >= 48rem) {
-  .testimonialGroup > .testimonial:nth-child(2n) {grid-column:3 / span 9;}
-}

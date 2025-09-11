@@ -22,10 +22,10 @@ export default function Testimonial({
 
   return (
     <section className={classes.join(' ')} id={id}>
-      <blockquote>{quote}</blockquote>
+      <blockquote>&quot;{quote}&quot;</blockquote>
       <p>
         {author}
-        {role && <em>, {role}</em>}
+        {role && <em> {role}</em>}
       </p>
     </section>
   );

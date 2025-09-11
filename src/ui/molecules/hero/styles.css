@@ -1,53 +1,52 @@
 .hero {
-  background:
-    linear-gradient(
-      27deg,
-      var(--color-hero-500) calc(var(--spacing) * 1.25),
-      var(--color-transparent) calc(var(--spacing) * 1.25)
-    ) 0 calc(var(--spacing) * 1.25),
-    linear-gradient(
-      207deg,
-      var(--color-hero-500) calc(var(--spacing) * 1.25),
-      var(--color-transparent) calc(var(--spacing) * 1.25)
-    ) calc(var(--spacing) * 2.5) 0px,
-    linear-gradient(
-      27deg,
-      var(--color-hero-100) calc(var(--spacing) * 1.25),
-      var(--color-transparent) calc(var(--spacing) * 1.25)
-    ) 0px calc(var(--spacing) * 2.5),
-    linear-gradient(
-      207deg,
-      var(--color-hero-100) calc(var(--spacing) * 1.25),
-      var(--color-transparent) calc(var(--spacing) * 1.25)
-    ) calc(var(--spacing) * 2.5) calc(var(--spacing) * 1.25),
-    linear-gradient(
-      90deg,
-      var(--color-hero-300) calc(var(--spacing) * 2.5),
-      var(--color-transparent) calc(var(--spacing) * 2.5)
-    ),
-    linear-gradient(
-      var(--color-hero-200) 25%, 
-      var(--color-hero-400) 25%, 
-      var(--color-hero-400) 50%, 
-      var(--color-transparent) 50%, 
-      var(--color-transparent) 75%, 
-      var(--color-hero-000) 75%, 
-      var(--color-hero-000)
-    );
-  background-color:var(--color-hero-600);
-  background-size:calc(var(--spacing) * 5) calc(var(--spacing) * 5);
+  background-color: var(--color-hero-600);
+  background-size: calc(var(--spacing) * 5) calc(var(--spacing) * 5);
 }
 
-.hero > .wrapper {display:grid; grid-auto-flow:dense; width:100%; grid-template-columns:repeat(12, minmax(0, 1fr)); padding:var(--padding-hero-y) var(--padding-hero-x);}
-.hero > .wrapper > div {grid-column:span 12 / span 12; text-align:center; align-content:center;}
-.hero > .wrapper > div > img {margin:auto; padding:var(--padding-hero-img-xy); width:70%;}
-.hero > .wrapper > div h1 {color:var(--color-hero-heading-text); font-weight:300;}
-.hero > .wrapper > div h1 strong {color:var(--color-hero-heading-bold-text); font-weight:400;}
-.hero > .wrapper > div p {color:var(--color-hero-text);}
-.hero > .wrapper > div p strong {color:var(--color-hero-bold-text);}
+.hero.video {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  min-height: calc(var(--spacing) * 87.5);
+  align-content: center;
+}
+.hero.video > .wrapper {
+  position: relative;
+  z-index: 10;
+  text-shadow: 0px 1px 2px var(--tw-text-shadow-color, oklab(0% 0 0 / 0.5)),
+    0px 3px 2px var(--tw-text-shadow-color, oklab(0% 0 0 / 0.5)),
+    0px 4px 8px var(--tw-text-shadow-color, oklab(0% 0 0 / 0.5));
+}
 
+.hero > .wrapper {
+  display: grid;
+  grid-auto-flow: dense;
+  width: 100%;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  padding: var(--padding-hero-y) var(--padding-hero-x);
+}
+.hero > .wrapper > div {
+  grid-column: span 12 / span 12;
+  text-align: center;
+  align-content: center;
+}
+.hero > .wrapper > div h1 {
+  color: var(--color-hero-heading-text);
+  font-weight: 500;
+  line-height: var(--tw-leading, var(--text-6xl--line-height));
+}
+.hero > .wrapper > div h2 {
+  color: var(--color-hero-text);
+  font-size: var(--text-2xl);
+  font-weight: 300;
+  margin-top: var(--spacing-hero-xy);
+}
+.hero > .wrapper > div a {
+  margin-top: var(--spacing-hero-xy);
+}
 @media (width >= 48rem) {
-  .hero > .wrapper {max-width:var(--container-5xl); margin:auto;}
-  .hero > .wrapper > div {grid-column:span 6 / span 6; text-align:left;}
+  .hero > .wrapper {
+    max-width: var(--container-5xl);
+    margin: auto;
+  }
 }
-

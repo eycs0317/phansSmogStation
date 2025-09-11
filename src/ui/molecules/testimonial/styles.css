@@ -1,4 +1,19 @@
-.testimonial {padding:1rem;}
-.testimonial blockquote {border-left:1px solid #ccc; color:var(--color-neutral-400); margin-left:1rem; padding:1rem;}
-.testimonial p {font-weight:bold; margin:1rem 0 0 1rem;}
-.testimonial p em {font-weight:normal; font-style:italic;}
+.testimonial {
+  padding: 1rem;
+}
+.testimonial blockquote {
+  font-size: var(--text-lg);
+  color: var(--color-neutral-200);
+  padding: 0;
+}
+.testimonial p {
+  font-size: var(--text-sm);
+  font-weight: bold;
+  margin: 0.5rem 0 0;
+  text-align: right;
+}
+.testimonial p em {
+  font-size: var(--text-sm);
+  font-weight: normal;
+  font-style: italic;
+}

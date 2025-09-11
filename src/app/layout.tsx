@@ -9,6 +9,9 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Noto_Sans } from 'next/font/google';
 
+// ui - atoms
+import Heading from '@/ui/atoms/heading';
+
 const notoSans = Noto_Sans({
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -18,7 +21,6 @@ const notoSans = Noto_Sans({
 
 // lib
 import { getSession } from '@/lib/session';
-import { l10n } from '@/lib/l10n';
 
 // ui
 import Header from '@/ui/molecules/header';
@@ -29,16 +31,16 @@ export async function generateMetadata(): Promise<Metadata> {
   const lang = session?.lang ?? 'en-US';
 
   const localizedTitles: Record<string, string> = {
-    'en-US': 'edlou.com',
-    'zh-HK': 'edlou.com',
+    'en-US': "Phan's Smog Station",
+    'zh-HK': "Phan's Smog Station",
   };
 
   return {
     title: {
-      template: '%s | ' + (localizedTitles[lang] ?? 'edlou.com'),
-      default: localizedTitles[lang] ?? 'edlou.com',
+      template: '%s | ' + (localizedTitles[lang] ?? 'EFX Demo'),
+      default: localizedTitles[lang] ?? 'EFX Demo',
     },
-    description: 'edlou.com',
+    description: 'EFX Demo',
     icons: {
       icon: [
         {
@@ -67,20 +69,17 @@ export default async function RootLayout({ children }: LayoutProps) {
   return (
     <html lang={lang}>
       <body className={notoSans.className}>
-        <Header
-          logo={{
-            src: '/assets/i/logo.svg',
-            alt: l10n('layout-logo-link', lang),
-            width: 200,
-            height: 40,
-          }}
-        />
+        <Header>
+          <Heading level={1}>
+            Phan&apos;s <span>Smog Station</span>
+          </Heading>
+        </Header>
         {children}
         <Footer
           year="2025"
           entity={{
             url: '/',
-            name: 'edlou.com',
+            name: "Phan's Smog Station",
           }}
         />
 

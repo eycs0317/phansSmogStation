@@ -2,7 +2,7 @@
 import '@/ui/molecules/hcard/styles.css';
 
 // util
-import {formatUSPhone} from '@/util/formatUSPhone';
+import { formatUSPhone } from '@/util/formatUSPhone';
 
 // type
 export type HcardProps = {
@@ -49,25 +49,43 @@ export default function Hcard({
               {locality && <span className="p-locality">{locality}</span>}
               {locality && region && ','}{' '}
               {region && <abbr className="p-region">{region}</abbr>}{' '}
-              {postalCode && <span className="p-postal-code">{postalCode}</span>}
+              {postalCode && (
+                <span className="p-postal-code">{postalCode}</span>
+              )}
             </div>
           )}
         </div>
       )}
 
+      {phone && (
+        <a
+          className="p-tel"
+          href={`tel:${phone}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {formatUSPhone(phone)}
+        </a>
+      )}
+
       {email && (
-        <div>
-          <a className="u-email" href={`mailto:${email}`}>{email}</a>
-        </div>
+        <a className="u-email" href={`mailto:${email}`}>
+          {email}
+        </a>
       )}
 
       {url && (
         <div>
-          <a className="u-url" href={url} target="_blank" rel="noopener noreferrer">{url}</a>
+          <a
+            className="u-url"
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {url}
+          </a>
         </div>
       )}
-
-      {phone && <div className="p-tel">{formatUSPhone(phone)}</div>}
     </div>
   );
 }
